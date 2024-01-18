@@ -57,6 +57,8 @@ Assuming that $Q$ is convex, find the optimal values for $\mu_k$ and $\Sigma_k$
 \nabla_{W^{-1}} \log[\det(W)] &= -W & \text{if $W$ is symmetric and positive semi-definite}
 \end{align}
 
+
+Since we have given that this functionis convex, we can simply calculate the first derivative to find it's minima. 
 \begin{gather*}
 \nabla_{\mu_k} \sum_{i=1}^N \sum_{k=1}^K \gamma_{k,i} \left(\frac{1}{2}\log[2\pi \det(\Sigma_k)] + \frac{1}{2} (x_i - \mu_k)^T \Sigma_k^{-1} (x_i - \mu_k) - \log[p_Z(k)]\right) \stackrel{!}{=} \vec{0}\\
 \Leftrightarrow \sum_{i=1}^N \gamma_{k,i} \left( \nabla_{\mu_k} \frac{1}{2} (x_i - \mu_k)^T \Sigma_k^{-1} (x_i - \mu_k) \right) = 0\\
@@ -66,8 +68,7 @@ Assuming that $Q$ is convex, find the optimal values for $\mu_k$ and $\Sigma_k$
 \Leftrightarrow \Sigma_k^{-1} \sum_{i=1}^N \gamma_{k,i} x_i = \Sigma_k^{-1} \mu_k \sum_{i=1}^N \gamma_{k,i}\\
 \Leftrightarrow \frac{\sum_{i=1}^N \gamma_{k,i} x_i}{\sum_{i=1}^N \gamma_{k,i}} = \mu_k
 \end{gather*}
-Lorem ipsum \\
-number 57 141
+
 \begin{gather*}
 \nabla_{\Sigma_k^{-1}} \sum_{i=1}^N \sum_{k=1}^K \gamma_{k,i} \left(\frac{1}{2}\log[2\pi \det(\Sigma_k)] + \frac{1}{2} (x_i - \mu_k)^T \Sigma_k^{-1} (x_i - \mu_k) - \log[p_Z(k)]\right) \stackrel{!}{=} \vec{0}\\
 \Leftrightarrow\sum_{i=1}^N  \gamma_{k,i} \left(-\frac{1}{2}\Sigma_k + \frac{1}{2} (x_i - \mu_k)^T (x_i - \mu_k)\right) = 0\\
